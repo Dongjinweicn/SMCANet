@@ -11,7 +11,7 @@ Besides, please install other packages using ```pip install -r requirements.txt`
 
 ## How to test
 
-To test the performance of U-Net, PU-Net, Baseline, and BayeSeg on the LGE CMR of MS-CMRSeg, please uncomment the corresponding line in `demo.sh`, and then run `sh demo.sh`.
+To test the performance of U-Net, and SMCAnet on CARE2024, please uncomment the corresponding line in `demo.sh`, and then run `sh demo.sh`.
 ```bash
 # test SMCAnet
 #  CUDA_VISIBLE_DEVICES=0 python -u main.py --model SMCAnet --eval --dataset ./input --sequence test_3modalities --resume ./pth/checkpoint0best6.pth --device cuda
@@ -19,7 +19,7 @@ To test the performance of U-Net, PU-Net, Baseline, and BayeSeg on the LGE CMR o
 ```
 
 ## How to train
-All models were trained using LGE CMR of MS-CMRSeg, and the root of training data is defined in `data/mscmr.py` as follows,
+All models were trained using Cine, T2w and LGE CMR of CARE2024, and the root of training data is defined in `data/mscmr.py` as follows,
 ```python
 root = Path('your/dataset/directory' + args.dataset)
 ```
